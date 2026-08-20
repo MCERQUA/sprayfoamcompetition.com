@@ -1,9 +1,7 @@
-import { Inter, Space_Grotesk } from "next/font/google";
+import { Space_Grotesk, Work_Sans } from "next/font/google";
 
-// UPDATE: Replace with fonts from brand intake.
-// See instructions/design-system.md for recommended pairings by tone.
-
-export const bodyFont = Inter({
+// Font pairing locked by the Stitch design system (ai/research/design-system.md)
+export const bodyFont = Work_Sans({
   subsets: ["latin"],
   variable: "--font-body",
   display: "swap",

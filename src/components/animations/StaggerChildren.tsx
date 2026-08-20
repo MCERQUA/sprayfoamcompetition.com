@@ -1,5 +1,5 @@
 "use client";
-import { motion, useReducedMotion } from "motion/react";
+import { motion, useReducedMotion, type Variants } from "motion/react";
 import { cn } from "@/lib/utils";
 
 interface StaggerChildrenProps {
@@ -18,7 +18,7 @@ const container = {
   }),
 };
 
-const item = {
+const item: Variants = {
   hidden: { opacity: 0, y: 20 },
   visible: {
     opacity: 1,

@@ -2,37 +2,48 @@
 @tailwind components;
 @tailwind utilities;
 
-/* ===== DESIGN TOKENS ===== */
-/* Replace these values with client brand colors */
+/* ===== DESIGN TOKENS — Spray Foam Competition =====
+ * Palette locked to the Stitch design system — ai/research/design-system.md
+ * (projects/5654343829269363301, assets/16266569676201261858)
+ * Bronze/gold read naturally as medal/award tones for this theme while staying strictly
+ * warm-earth-only (zero purple/pink/blue/cyan, zero neon). Light, bright, trade-publication tone.
+ */
 
 @layer base {
 :root {
-  --background: 240 10% 4%;          /* #0a0a0f */
-  --foreground: 214 32% 91%;          /* #e2e8f0 */
+  --background: 36 50% 96%;           /* #FAF6F0 warm off-white */
+  --foreground: 30 34% 13%;           /* #2B2015 charcoal-brown */
 
-  --card: 222 47% 7%;                 /* #0d1117 */
-  --card-foreground: 214 32% 91%;     /* #e2e8f0 */
+  --card: 0 0% 100%;
+  --card-foreground: 30 34% 13%;
 
-  --primary: 217 91% 60%;             /* #3b82f6 — replace with brand */
-  --primary-foreground: 0 0% 100%;    /* #ffffff */
+  --primary: 30 63% 44%;              /* #B8722A bronze/amber */
+  --primary-foreground: 0 0% 100%;
 
-  --secondary: 215 20% 15%;           /* #1e293b */
-  --secondary-foreground: 214 32% 91%;
+  --secondary: 21 55% 35%;            /* #8B4A28 clay/copper */
+  --secondary-foreground: 0 0% 100%;
 
-  --accent: 190 95% 39%;              /* #06b6d4 — replace with brand */
-  --accent-foreground: 0 0% 100%;
+  --accent: 40 64% 53%;               /* #D4A03C medal gold */
+  --accent-foreground: 30 34% 13%;
 
-  --muted: 215 20% 15%;               /* #1e293b */
-  --muted-foreground: 215 16% 62%;    /* #94a3b8 */
+  --sage: 80 25% 36%;                 /* #6B7A4C natural green */
+  --sage-foreground: 0 0% 100%;
 
-  --destructive: 0 84% 60%;           /* #ef4444 */
+  --muted: 36 45% 91%;
+  --muted-foreground: 28 15% 38%;
+
+  --destructive: 0 74% 42%;
   --destructive-foreground: 0 0% 100%;
 
-  --border: 215 20% 15%;              /* #1e293b */
-  --input: 215 20% 15%;
-  --ring: 217 91% 60%;                /* same as primary */
+  --border: 33 35% 84%;
+  --input: 33 35% 84%;
+  --ring: 30 63% 44%;
 
-  --radius: 0.75rem;
+  /* Inverted contrast band — dark punctuation band on this light-dominant site */
+  --ink: 25 48% 20%;                  /* #4A2E1A deep bronze-brown */
+  --ink-foreground: 36 40% 95%;
+
+  --radius: 0.75rem;                  /* ROUND_TWELVE per Stitch design system */
 }
 
 * {
@@ -56,11 +67,6 @@ h1, h2, h3, h4, h5, h6 {
   to { transform: translateX(-50%); }
 }
 
-@keyframes gradient-shift {
-  0%, 100% { background-position: 0% 50%; }
-  50% { background-position: 100% 50%; }
-}
-
 /* ===== REDUCED MOTION ===== */
 
 @media (prefers-reduced-motion: reduce) {
@@ -74,11 +80,11 @@ h1, h2, h3, h4, h5, h6 {
 /* ===== SELECTION ===== */
 
 ::selection {
-  background: hsl(var(--primary) / 0.3);
+  background: hsl(var(--primary) / 0.25);
   color: hsl(var(--foreground));
 }
 
-/* ===== SCROLLBAR (optional, dark mode) ===== */
+/* ===== SCROLLBAR ===== */
 
 ::-webkit-scrollbar {
   width: 8px;
@@ -87,19 +93,14 @@ h1, h2, h3, h4, h5, h6 {
   background: hsl(var(--background));
 }
 ::-webkit-scrollbar-thumb {
-  background: hsl(var(--muted));
+  background: hsl(var(--muted-foreground) / 0.4);
   border-radius: 4px;
 }
 ::-webkit-scrollbar-thumb:hover {
-  background: hsl(var(--muted-foreground));
+  background: hsl(var(--muted-foreground) / 0.7);
 }
 
 /* ===== TOUCH TARGETS (WCAG 2.5.5 / 2.5.8) ===== */
-/* Source-level 44px floor so every built site clears QA's touch-target gate at source. */
-/* Adopted 2026-07-02 (pledge ce9b58fc) — traces to QA-manager's 36brickhouse NO-SHIP lesson. */
-/* In @layer base so it is a genuine FLOOR: `min-height` beats any `h-*` fixed-height utility */
-/* (min-height always wins over a smaller height), while an explicit `min-h-*` utility can still */
-/* opt a control out deliberately. Keeps Tailwind's cascade intact. */
 @layer base {
   button,
   [role="button"],
@@ -111,10 +112,56 @@ h1, h2, h3, h4, h5, h6 {
     min-height: 44px;
   }
 
-  /* Icon-only buttons collapse below 44px wide without a width floor too. */
   button.icon,
   .btn-icon,
   [data-icon-only] {
     min-width: 44px;
   }
+}
+
+/* ===== BLOG / ARTICLE PROSE (no typography plugin — hand-styled, light theme) ===== */
+.post-prose {
+  color: hsl(var(--foreground) / 0.85);
+  line-height: 1.75;
+}
+.post-prose h2 {
+  font-size: 1.5rem;
+  font-weight: 700;
+  margin-top: 2.5rem;
+  margin-bottom: 1rem;
+  color: hsl(var(--foreground));
+}
+.post-prose h3 {
+  font-size: 1.25rem;
+  font-weight: 700;
+  margin-top: 2rem;
+  margin-bottom: 0.75rem;
+  color: hsl(var(--foreground));
+}
+.post-prose p {
+  margin-bottom: 1.25rem;
+}
+.post-prose ul, .post-prose ol {
+  margin: 0 0 1.25rem 1.5rem;
+}
+.post-prose li {
+  margin-bottom: 0.5rem;
+}
+.post-prose ul { list-style: disc; }
+.post-prose ol { list-style: decimal; }
+.post-prose a {
+  color: hsl(var(--primary));
+  text-decoration: underline;
+  text-underline-offset: 2px;
+}
+.post-prose strong {
+  color: hsl(var(--foreground));
+  font-weight: 600;
+}
+.post-prose blockquote {
+  border-left: 3px solid hsl(var(--primary) / 0.5);
+  padding-left: 1.25rem;
+  font-style: italic;
+  color: hsl(var(--muted-foreground));
+  margin: 1.5rem 0;
 }

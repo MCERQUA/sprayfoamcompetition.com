@@ -41,12 +41,12 @@ interface NavbarProps {
 const DEFAULT_NAV_ITEMS: NavItem[] = [
   { label: "Home", href: "/" },
   { label: "About", href: "/about" },
-  { label: "Services", href: "/services" },
+  { label: "Topics", href: "/topics" },
   { label: "Blog", href: "/blog" },
   { label: "Contact", href: "/contact" },
 ];
 
-const DEFAULT_CTA: NavCTA = { label: "Get a Quote", href: "/contact" };
+const DEFAULT_CTA: NavCTA = { label: "Find an Installer", href: "/find-an-installer" };
 
 export function Navbar(props: NavbarProps) {
   const [isScrolled, setIsScrolled] = useState(false);
