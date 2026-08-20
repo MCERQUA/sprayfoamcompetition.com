@@ -1,0 +1,30 @@
+{
+  "source": "DataForSEO keywords_data/google_ads/search_volume/live, US, 2026-08-20 (called api.dataforseo.com directly, proxy at dataforseo.sh unreliable)",
+  "real_business_check": "Web search confirmed real spray foam industry competitions exist: SPFA (Spray Polyurethane Foam Alliance) National Industry Excellence Awards, the 'Top Gun' live spray application contest at the annual SprayFoam Convention & Expo, the SFWW Spray Competition, and regional events like the California Spray Foam Championship. No business or project exists under the name 'sprayfoamcompetition.com' or 'Spray Foam Competition' — no collision. This is NOT a speculative-tech-buzzword domain (per Mike's standing rule distinguishing metaverse/NFT/web3/crypto-premise domains from ordinary trade concepts) — competitions/awards are a real, ordinary industry concept.",
+  "finding": "Literal competition-name terms return null/zero volume ('spray foam competition', 'top gun spray foam', 'spray foam awards', 'spray foam championship', 'best spray foam contractor', 'how to choose a spray foam contractor' all null) — same pattern as prior builds: the exact concept isn't a search term. But 'spray foam contractor near me' carries REAL, substantial volume (1,900/mo, HIGH competition, $16.92 CPC) — classic high-value local lead-gen intent. 'spray foam insulation quotes' (90/mo, HIGH, $22.68 CPC) and 'spray foam convention' (20/mo) round out real, if modest, adjacent demand.",
+  "decision": "The real competitions ARE the content hook (establishes E-E-A-T/credibility, satisfies the 'ordinary industry concept' framing) but the real SEARCH demand and lead-gen engine is 'find a [top-rated] spray foam contractor near me.' Site covers the genuine competition/awards landscape honestly, then uses that established quality standard as the credibility bridge into a 'find a vetted, award-caliber installer' referral funnel — not inventing a fake competition, not leading with a zero-volume term as if it were the main draw.",
+  "primary": [
+    {"keyword": "spray foam contractor near me", "volume": 1900, "cpc": 16.92, "competition": "HIGH"},
+    {"keyword": "spray foam insulation quotes", "volume": 90, "cpc": 22.68, "competition": "HIGH"},
+    {"keyword": "spray foam convention", "volume": 20, "cpc": null, "competition": "LOW"},
+    {"keyword": "best spray foam insulation company", "volume": 20, "cpc": 8.81, "competition": "LOW"},
+    {"keyword": "spfa awards", "volume": 10, "cpc": null, "competition": null}
+  ],
+  "null_volume_confirmed": [
+    "spray foam competition",
+    "top gun spray foam",
+    "spray foam awards",
+    "spray foam championship",
+    "best spray foam contractor",
+    "top rated spray foam installer",
+    "spray foam certification awards",
+    "spray foam industry events",
+    "national spray foam expo",
+    "how to choose a spray foam contractor",
+    "spray foam installer reviews",
+    "spray foam quality standards",
+    "spray foam application mistakes",
+    "spray foam contractor reviews",
+    "how to tell good spray foam job"
+  ]
+}
